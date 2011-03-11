@@ -17,4 +17,3 @@
   (doto (AppGameContainer. (make-game "lol pirm" "pirmin.png"))
     (.setDisplayMode 800 600 false)
     (.start)))
-
