@@ -9,3 +9,4 @@
                         [native-deps "1.0.5"]]
   :main                slick-test.core
   :native-dependencies [[org.lwjgl/lwjgl-native-platform "2.7.1"]])
+
