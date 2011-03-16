@@ -10,6 +10,7 @@
      plane-data (atom [400 300])]
     (proxy [BasicGame]
       ["Slick2DPath2Glory - SimpleGame"]
+
       (init [gc]
         (let [img (fn [x file] (Image. file))]
           (swap! land
@@ -27,8 +28,8 @@
             (if (key-down? Input/KEY_W)
               (swap! plane-data
                      (fn [pd hip rotation]
-                       [(+ (* hip (sin rotation)) (first pd))
-                        (- (* hip (cos rotation)) (last pd))])
+                       [(+ (first pd) (* hip (sin rotation)))
+                        (- (peek pd) (* hip (cos rotation)))])
                      (* 0.4 delta)
                      (Math/toRadians (.getRotation @plane))))))
 
