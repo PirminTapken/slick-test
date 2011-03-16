@@ -8,5 +8,7 @@
   :dev-dependencies    [[swank-clojure "1.2.1"]
                         [native-deps "1.0.5"]]
   :main                slick-test.core
+  :repositories     {"snapshots" "http://maven.prettyrandom.net/"
+                     "releases"  "http://maven.prettyrandom.net/"}
   :native-dependencies [[org.lwjgl/lwjgl-native-platform "2.7.1"]])
 
