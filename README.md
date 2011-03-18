@@ -1,10 +1,14 @@
 # slick-test
+
+## Description
 Playing around with slick in clojure. Maybe producing neat libs, probably not ;)
 
 ## Usage
 
 * Get lein.
+
 * Then run:
+
 <pre><code>
 $ lein deps
 $ lein native-deps
