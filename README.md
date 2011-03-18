@@ -3,14 +3,13 @@ Playing around with slick in clojure. Maybe producing neat libs, probably not ;)
 
 ## Usage
 
-Get lein.
-
-Then run:
-<code>
+* Get lein.
+* Then run:
+<pre><code>
 $ lein deps
 $ lein native-deps
 $ lein run
-</code>
+</code></pre>
 
 ## License
 
