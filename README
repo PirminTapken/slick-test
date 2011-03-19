@@ -1,15 +1,19 @@
 # slick-test
 
-FIXME: write description
+## Description
+Playing around with slick in clojure. Maybe producing neat libs, probably not ;)
 
 ## Usage
 
-Get lein.
+* Get lein.
 
-Then run:
+* Then run:
+
+<pre><code>
 $ lein deps
 $ lein native-deps
 $ lein run
+</code></pre>
 
 ## License
 
