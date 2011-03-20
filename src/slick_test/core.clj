@@ -18,15 +18,23 @@
 
 (defn init-game [gc]
   "Inits the game. Is called by the game object."
-  (reset! land (Image. "land.jpg")))
+  (reset! land (Image. "land.jpg"))
+  (dosync (alter (:image plane) create-image "plane.png")))
 
 (defn update-game [gc delta]
   "For event handling!?")
 
 (defn render-game [gc g]
   "Renders the game."
-  (let [bg @land]
-    (.draw bg)))
+  (dosync
+   (let [bg @land
+	 ; plane should be optimzed...
+	 plane {:image @(:image plane)
+		:x @(:x plane)
+		:y @(:y plane)
+		:scale @(:scale plane)}]
+     (.draw bg)
+     (.draw (:image plane) (:x plane) (:y plane)))))
 
 ; The game as an object.
 (def simple-game
@@ -40,9 +48,9 @@
 	       (render-game gc g))))
 
 ; The container controlling the game
-(def app-game-container (AppGameContainer. simple-game))
+(def app-game-container (doto (AppGameContainer. simple-game) (.setDisplayMode 800 600 false)))
 
-; This is the agent running the game
+;This is the agent running the game
 (def running-game (agent nil))
 
 (defn start-game []
